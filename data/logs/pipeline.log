@@ -82,3 +82,14 @@
 2025-02-27 10:05:44,411 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
 2025-02-27 10:05:44,468 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
 2025-02-27 10:05:44,468 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-03-01 10:50:23,052 - __main__ - INFO - Processing all files in raw directory
+2025-03-01 10:50:23,060 - __main__ - INFO - Found 2 data files in /content/drive/MyDrive/Colab Notebooks/automated_reporting/data/raw
+2025-03-01 10:50:23,064 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.csv to standardized format
+2025-03-01 10:50:23,071 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-03-01 10:50:23,072 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-03-01 10:50:23,090 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.csv through all pipeline steps
+2025-03-01 10:50:23,090 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-03-01 10:50:23,629 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-03-01 10:50:23,631 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-03-01 10:50:23,644 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.csv through all pipeline steps
+2025-03-01 10:50:23,651 - __main__ - INFO - Processing summary: 1/2 files successfully processed

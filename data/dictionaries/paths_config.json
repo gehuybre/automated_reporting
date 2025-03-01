@@ -5,9 +5,13 @@
     "raw_data_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/raw",
     "processed_data_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/processed",
     "dictionary_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries",
+    "logs_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/logs",
     "output_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output",
     "reports_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/reports",
     "visualizations_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations",
+    "current_visualizations_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_105633",
     "file_descriptions_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/file_descriptions.json",
-    "paths_config_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/paths_config.json"
+    "paths_config_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/paths_config.json",
+    "plotly_layout_config_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/plotly_layout_config.json",
+    "pipeline_log_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/logs/pipeline.log"
 }

@@ -8,6 +8,7 @@ the layout configuration.
 
 import os
 import json
+import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 from path_config import ProjectPaths
@@ -119,8 +120,27 @@ class VisualizationManager:
         dataset_config = self.file_descriptions[dataset_name]
         
         # Load the dataset
-        data_path = os.path.join(self.paths.processed_data_dir, f"{dataset_name}.pkl")
-        df = pd.read_pickle(data_path)
+        # Try to load from pickle first, fall back to CSV if necessary
+        data_path_pkl = os.path.join(self.paths.processed_data_dir, f"{dataset_name}.pkl")
+        data_path_csv = os.path.join(self.paths.processed_data_dir, f"{dataset_name}.csv")
+        
+        try:
+            df = pd.read_pickle(data_path_pkl)
+        except (FileNotFoundError, pd.errors.EmptyDataError):
+            # If pickle doesn't exist or is empty, try CSV
+            if os.path.exists(data_path_csv):
+                df = pd.read_csv(data_path_csv)
+            else:
+                # Try the raw data directory as last resort
+                raw_data_path = os.path.join(self.paths.raw_data_dir, f"{dataset_name}.csv")
+                if os.path.exists(raw_data_path):
+                    df = pd.read_csv(raw_data_path)
+                else:
+                    raise FileNotFoundError(f"Could not find dataset: {dataset_name}")
+        
+        # Ensure that column names match what's expected (case-insensitive)
+        # Create a mapping from lowercase column names to actual column names
+        column_map = {col.lower(): col for col in df.columns}
         
         # If no variables specified, use all
         if not variable_names:
@@ -131,13 +151,14 @@ class VisualizationManager:
         
         if graph_id:
             # Look for a specific combined graph
-            for combined_graph in dataset_config['visualization']['combined_graphs']:
-                if combined_graph['id'] == graph_id:
-                    graph_config = combined_graph
-                    break
+            if 'visualization' in dataset_config and 'combined_graphs' in dataset_config['visualization']:
+                for combined_graph in dataset_config['visualization']['combined_graphs']:
+                    if combined_graph['id'] == graph_id:
+                        graph_config = combined_graph
+                        break
             
             # If not found, check individual variable graphs
-            if not graph_config:
+            if not graph_config and 'visualization' in dataset_config and 'variables' in dataset_config['visualization']:
                 for var_name, var_config in dataset_config['visualization']['variables'].items():
                     if var_config['graph_id'] == graph_id:
                         graph_config = var_config['graph_config']
@@ -146,7 +167,9 @@ class VisualizationManager:
         
         # If no specific graph found, use the first combined graph or create default
         if not graph_config:
-            if 'combined_graphs' in dataset_config['visualization'] and dataset_config['visualization']['combined_graphs']:
+            if ('visualization' in dataset_config and 
+                'combined_graphs' in dataset_config['visualization'] and 
+                dataset_config['visualization']['combined_graphs']):
                 graph_config = dataset_config['visualization']['combined_graphs'][0]
             else:
                 # Create a default graph config
@@ -165,12 +188,34 @@ class VisualizationManager:
         
         # Add each variable as a trace
         for var_name in variable_names:
-            if var_name not in df.columns:
+            # Check if the variable exists in the dataset (case-insensitive)
+            var_col = None
+            
+            # First try exact match
+            if var_name in df.columns:
+                var_col = var_name
+            # Then try lowercase match with the column map
+            elif var_name.lower() in column_map:
+                var_col = column_map[var_name.lower()]
+            # Finally, try to see if the column exists with slight variations 
+            # (e.g. spaces vs underscores, capitalization)
+            else:
+                for col in df.columns:
+                    # Replace spaces and underscores, compare lowercase
+                    if (col.lower().replace(' ', '').replace('_', '') == 
+                        var_name.lower().replace(' ', '').replace('_', '')):
+                        var_col = col
+                        break
+            
+            if not var_col:
                 print(f"Warning: Variable '{var_name}' not found in dataset")
                 continue
             
             # Get variable-specific configuration
-            var_config = dataset_config['visualization']['variables'].get(var_name, {})
+            var_config = {}
+            if 'visualization' in dataset_config and 'variables' in dataset_config['visualization']:
+                var_config = dataset_config['visualization']['variables'].get(var_name, {})
+            
             display_name = var_config.get('display_name', var_name)
             color = var_config.get('color', None)
             
@@ -182,20 +227,20 @@ class VisualizationManager:
             if graph_type == 'line':
                 trace = go.Scatter(
                     x=df[x_column],
-                    y=df[var_name],
+                    y=df[var_col],
                     name=display_name,
                     mode=trace_style.get('mode', 'lines+markers')
                 )
             elif graph_type == 'bar':
                 trace = go.Bar(
                     x=df[x_column],
-                    y=df[var_name],
+                    y=df[var_col],
                     name=display_name
                 )
             elif graph_type == 'area':
                 trace = go.Scatter(
                     x=df[x_column],
-                    y=df[var_name],
+                    y=df[var_col],
                     name=display_name,
                     fill='tozeroy',
                     mode='lines'
@@ -203,7 +248,7 @@ class VisualizationManager:
             elif graph_type == 'scatter':
                 trace = go.Scatter(
                     x=df[x_column],
-                    y=df[var_name],
+                    y=df[var_col],
                     name=display_name,
                     mode='markers'
                 )
@@ -211,7 +256,7 @@ class VisualizationManager:
                 # Default to line
                 trace = go.Scatter(
                     x=df[x_column],
-                    y=df[var_name],
+                    y=df[var_col],
                     name=display_name
                 )
             
@@ -221,9 +266,9 @@ class VisualizationManager:
                     trace.update({key: value})
             
             # Set custom color if provided
-            if color and 'line' in trace:
+            if color and hasattr(trace, 'line'):
                 trace.line.color = color
-            elif color and 'marker' in trace:
+            elif color and hasattr(trace, 'marker'):
                 trace.marker.color = color
             
             # Add trace to figure

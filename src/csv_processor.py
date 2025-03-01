@@ -15,9 +15,32 @@ import re
 from pathlib import Path
 import random
 import colorsys
+import logging
+from datetime import datetime
 
 # Import the ProjectPaths class
 from path_config import ProjectPaths
+
+def setup_logging():
+    """Setup logging configuration"""
+    paths = ProjectPaths()
+    log_dir = paths.logs_dir
+    
+    # Create logs directory if it doesn't exist
+    os.makedirs(log_dir, exist_ok=True)
+    
+    # Configure logging
+    log_file = os.path.join(log_dir, 'pipeline.log')
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()
+        ]
+    )
+    
+    return logging.getLogger(__name__)
 
 def generate_distinct_colors(n):
     """Generate n visually distinct colors"""
@@ -38,13 +61,17 @@ def generate_distinct_colors(n):
 
 def process_csv_files():
     """Process all CSV files in the raw data directory"""
+    # Setup logging
+    logger = setup_logging()
+    
     # Initialize paths
     paths = ProjectPaths()
     raw_data_path = paths.raw_data_dir
     processed_data_path = paths.processed_data_dir
     dictionary_path = paths.dictionary_dir
 
-    # Directories are already created by the ProjectPaths class
+    # Log start of processing
+    logger.info("Processing all files in raw directory")
 
     # Function to determine date type
     def determine_date_type(date_col):
@@ -73,7 +100,10 @@ def process_csv_files():
 
     # Find all CSV files in the raw data directory
     csv_files = [f for f in os.listdir(raw_data_path) if f.endswith('.csv')]
-    print(f"Found {len(csv_files)} CSV files in {raw_data_path}")
+    excel_files = [f for f in os.listdir(raw_data_path) if f.endswith(('.xlsx', '.xls'))]
+    
+    all_files = csv_files + excel_files
+    logger.info(f"Found {len(all_files)} data files in {raw_data_path}")
 
     # Load existing file descriptions if available
     file_descriptions_path = paths.file_descriptions_path
@@ -86,18 +116,56 @@ def process_csv_files():
     else:
         file_descriptions = {}
 
-    # Process each CSV file
-    for file in csv_files:
+    # Process each file
+    for file in all_files:
         file_path = os.path.join(raw_data_path, file)
-        print(f"Processing {file}...")
+        logger.info(f"Step 1: Converting {file} to standardized format")
         
         try:
-            # Read the CSV file
-            df = pd.read_csv(file_path)
+            # Read the file
+            if file.endswith(('.xlsx', '.xls')):
+                df = pd.read_excel(file_path)
+                # Create a CSV version
+                csv_file = os.path.splitext(file)[0] + '.csv'
+                csv_path = os.path.join(raw_data_path, csv_file)
+                df.to_csv(csv_path, index=False)
+                file = csv_file  # Update file name for further processing
+            else:
+                df = pd.read_csv(file_path)
             
             # Convert first column to string if it's not already
             first_col_name = df.columns[0]
             df[first_col_name] = df[first_col_name].astype(str)
+            
+            # Get file basename
+            basename = os.path.splitext(file)[0]
+            
+            # Step 2: Validation
+            logger.info(f"Step 2: Validating {basename}")
+            
+            # Basic validation checks
+            validation_issues = False
+            
+            # Check for missing values
+            if df.isna().any().any():
+                validation_issues = True
+                logger.warning(f"Missing values found in {file}")
+            
+            # Check for proper numeric data in all columns except first
+            for col in df.columns[1:]:
+                if not pd.api.types.is_numeric_dtype(df[col]):
+                    try:
+                        # Try to convert to numeric
+                        df[col] = pd.to_numeric(df[col])
+                    except:
+                        validation_issues = True
+                        logger.warning(f"Column {col} in {file} contains non-numeric data")
+            
+            if validation_issues:
+                logger.warning(f"Validation issues with {basename}. Proceeding with caution.")
+            
+            # Step 3: Cleaning and preparing data
+            logger.info(f"Step 3: Cleaning and preparing {basename}")
             
             # Determine date type
             date_type = determine_date_type(df[first_col_name])
@@ -113,8 +181,6 @@ def process_csv_files():
                 # Convert to datetime for months
                 df[first_col_name] = pd.to_datetime(df[first_col_name]).dt.to_period('M')
             
-            # Get file basename
-            basename = os.path.splitext(file)[0]
             variable_names = df.columns[1:].tolist()
             num_variables = len(variable_names)
             
@@ -205,23 +271,19 @@ def process_csv_files():
             pickle_path = os.path.join(processed_data_path, f"{basename}.pkl")
             df.to_pickle(pickle_path)
             
-            print(f"Successfully processed {file} ({date_type} data)")
+            logger.info(f"Successfully processed {file} through all pipeline steps")
             
         except Exception as e:
-            print(f"Error processing {file}: {str(e)}")
+            logger.error(f"Error processing {file}: {str(e)}")
 
     # Save all file descriptions to a single JSON file
     with open(paths.file_descriptions_path, 'w') as f:
         json.dump(file_descriptions, f, indent=4)
 
-    print(f"Saved descriptions for {len(file_descriptions)} files to file_descriptions.json")
+    # Count successful files
+    successful_files = len(file_descriptions)
+    logger.info(f"Processing summary: {successful_files}/{len(all_files)} files successfully processed")
 
-    # Print a summary of the processed files
-    print("\nSummary of processed files:")
-    for file, desc in file_descriptions.items():
-        print(f"{file}: {desc['number_of_data_points']} data points, {desc['number_of_variables']} variables, {desc['date_type']} format")
-
-    # Return the file descriptions for potential further processing
     return file_descriptions
 
 if __name__ == "__main__":
