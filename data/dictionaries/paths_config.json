@@ -1,0 +1,13 @@
+{
+    "base_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting",
+    "src_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/src",
+    "data_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data",
+    "raw_data_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/raw",
+    "processed_data_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/processed",
+    "dictionary_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries",
+    "output_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output",
+    "reports_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/reports",
+    "visualizations_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations",
+    "file_descriptions_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/file_descriptions.json",
+    "paths_config_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/paths_config.json"
+}

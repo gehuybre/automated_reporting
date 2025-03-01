@@ -1,0 +1,842 @@
+{
+    "themes": {
+        "default": {
+            "layout": {
+                "font": {
+                    "family": "Arial, sans-serif",
+                    "size": 12,
+                    "color": "#444444"
+                },
+                "title": {
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 18,
+                        "color": "#222222"
+                    },
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "legend": {
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#444444"
+                    },
+                    "bgcolor": "rgba(255, 255, 255, 0.5)",
+                    "bordercolor": "#DDDDDD",
+                    "borderwidth": 1,
+                    "orientation": "v",
+                    "xanchor": "right",
+                    "x": 0.99,
+                    "yanchor": "top",
+                    "y": 0.99
+                },
+                "colorway": [
+                    "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", 
+                    "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", 
+                    "#bcbd22", "#17becf"
+                ],
+                "plot_bgcolor": "#FFFFFF",
+                "paper_bgcolor": "#FFFFFF",
+                "margin": {
+                    "l": 80,
+                    "r": 80,
+                    "t": 100,
+                    "b": 80,
+                    "pad": 10
+                },
+                "hovermode": "closest",
+                "hoverlabel": {
+                    "bgcolor": "#FFFFFF",
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 12,
+                        "color": "#444444"
+                    },
+                    "bordercolor": "#DDDDDD"
+                },
+                "xaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Arial, sans-serif",
+                            "size": 14,
+                            "color": "#444444"
+                        },
+                        "standoff": 15
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#EEEEEE",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#CCCCCC",
+                    "zerolinewidth": 1,
+                    "showline": true,
+                    "linecolor": "#CCCCCC",
+                    "linewidth": 1,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#444444"
+                    },
+                    "ticklen": 5,
+                    "tickwidth": 1,
+                    "tickcolor": "#CCCCCC",
+                    "automargin": true
+                },
+                "yaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Arial, sans-serif",
+                            "size": 14,
+                            "color": "#444444"
+                        },
+                        "standoff": 15
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#EEEEEE",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#CCCCCC",
+                    "zerolinewidth": 1,
+                    "showline": true,
+                    "linecolor": "#CCCCCC",
+                    "linewidth": 1,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#444444"
+                    },
+                    "ticklen": 5,
+                    "tickwidth": 1,
+                    "tickcolor": "#CCCCCC",
+                    "automargin": true
+                }
+            },
+            "traces": {
+                "line": {
+                    "line": {
+                        "width": 2.5,
+                        "shape": "linear"
+                    },
+                    "marker": {
+                        "size": 6,
+                        "opacity": 0.8
+                    },
+                    "mode": "lines+markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "bar": {
+                    "marker": {
+                        "line": {
+                            "width": 0.5,
+                            "color": "#FFFFFF"
+                        },
+                        "opacity": 0.85
+                    },
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "scatter": {
+                    "marker": {
+                        "size": 8,
+                        "opacity": 0.9,
+                        "line": {
+                            "width": 1,
+                            "color": "#FFFFFF"
+                        }
+                    },
+                    "mode": "markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "area": {
+                    "line": {
+                        "width": 1.5,
+                        "shape": "linear"
+                    },
+                    "fill": "tozeroy",
+                    "fillcolor": "rgba(26, 150, 65, 0.1)",
+                    "marker": {
+                        "size": 5,
+                        "opacity": 0.7
+                    },
+                    "mode": "lines",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "pie": {
+                    "marker": {
+                        "line": {
+                            "width": 1,
+                            "color": "#FFFFFF"
+                        }
+                    },
+                    "textinfo": "percent+label",
+                    "hoverinfo": "label+percent+value",
+                    "hovertemplate": "%{label}: %{value:,.1f} (%{percent})<extra></extra>"
+                },
+                "heatmap": {
+                    "colorscale": "Viridis",
+                    "showscale": true,
+                    "hovertemplate": "X: %{x}<br>Y: %{y}<br>Value: %{z}<extra></extra>"
+                }
+            }
+        },
+        "dark": {
+            "layout": {
+                "font": {
+                    "family": "Arial, sans-serif",
+                    "size": 12,
+                    "color": "#E0E0E0"
+                },
+                "title": {
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 18,
+                        "color": "#FFFFFF"
+                    },
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "legend": {
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#E0E0E0"
+                    },
+                    "bgcolor": "rgba(32, 32, 32, 0.7)",
+                    "bordercolor": "#444444",
+                    "borderwidth": 1,
+                    "orientation": "v",
+                    "xanchor": "right",
+                    "x": 0.99,
+                    "yanchor": "top",
+                    "y": 0.99
+                },
+                "colorway": [
+                    "#00BFFF", "#FF8C00", "#32CD32", "#FF4500", 
+                    "#BA55D3", "#CD853F", "#FF69B4", "#B0B0B0", 
+                    "#FFFF00", "#00FFFF"
+                ],
+                "plot_bgcolor": "#222222",
+                "paper_bgcolor": "#121212",
+                "margin": {
+                    "l": 80,
+                    "r": 80,
+                    "t": 100,
+                    "b": 80,
+                    "pad": 10
+                },
+                "hovermode": "closest",
+                "hoverlabel": {
+                    "bgcolor": "#333333",
+                    "font": {
+                        "family": "Arial, sans-serif",
+                        "size": 12,
+                        "color": "#FFFFFF"
+                    },
+                    "bordercolor": "#555555"
+                },
+                "xaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Arial, sans-serif",
+                            "size": 14,
+                            "color": "#E0E0E0"
+                        },
+                        "standoff": 15
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#444444",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#666666",
+                    "zerolinewidth": 1,
+                    "showline": true,
+                    "linecolor": "#666666",
+                    "linewidth": 1,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#E0E0E0"
+                    },
+                    "ticklen": 5,
+                    "tickwidth": 1,
+                    "tickcolor": "#666666",
+                    "automargin": true
+                },
+                "yaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Arial, sans-serif",
+                            "size": 14,
+                            "color": "#E0E0E0"
+                        },
+                        "standoff": 15
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#444444",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#666666",
+                    "zerolinewidth": 1,
+                    "showline": true,
+                    "linecolor": "#666666",
+                    "linewidth": 1,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Arial, sans-serif",
+                        "size": 10,
+                        "color": "#E0E0E0"
+                    },
+                    "ticklen": 5,
+                    "tickwidth": 1,
+                    "tickcolor": "#666666",
+                    "automargin": true
+                }
+            },
+            "traces": {
+                "line": {
+                    "line": {
+                        "width": 2.5,
+                        "shape": "linear"
+                    },
+                    "marker": {
+                        "size": 6,
+                        "opacity": 0.9
+                    },
+                    "mode": "lines+markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "bar": {
+                    "marker": {
+                        "line": {
+                            "width": 0.5,
+                            "color": "#222222"
+                        },
+                        "opacity": 0.9
+                    },
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "scatter": {
+                    "marker": {
+                        "size": 8,
+                        "opacity": 0.9,
+                        "line": {
+                            "width": 1,
+                            "color": "#222222"
+                        }
+                    },
+                    "mode": "markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "area": {
+                    "line": {
+                        "width": 1.5,
+                        "shape": "linear"
+                    },
+                    "fill": "tozeroy",
+                    "fillcolor": "rgba(50, 205, 50, 0.2)",
+                    "marker": {
+                        "size": 5,
+                        "opacity": 0.8
+                    },
+                    "mode": "lines",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "pie": {
+                    "marker": {
+                        "line": {
+                            "width": 1,
+                            "color": "#222222"
+                        }
+                    },
+                    "textinfo": "percent+label",
+                    "hoverinfo": "label+percent+value",
+                    "hovertemplate": "%{label}: %{value:,.1f} (%{percent})<extra></extra>"
+                },
+                "heatmap": {
+                    "colorscale": "Plasma",
+                    "showscale": true,
+                    "hovertemplate": "X: %{x}<br>Y: %{y}<br>Value: %{z}<extra></extra>"
+                }
+            }
+        },
+        "print": {
+            "layout": {
+                "font": {
+                    "family": "Times New Roman, serif",
+                    "size": 10,
+                    "color": "#000000"
+                },
+                "title": {
+                    "font": {
+                        "family": "Times New Roman, serif",
+                        "size": 14,
+                        "color": "#000000"
+                    },
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "legend": {
+                    "font": {
+                        "family": "Times New Roman, serif",
+                        "size": 8,
+                        "color": "#000000"
+                    },
+                    "bgcolor": "#FFFFFF",
+                    "bordercolor": "#000000",
+                    "borderwidth": 0.5,
+                    "orientation": "v",
+                    "xanchor": "right",
+                    "x": 0.99,
+                    "yanchor": "top",
+                    "y": 0.99
+                },
+                "colorway": [
+                    "#000000", "#E69F00", "#56B4E9", "#009E73", 
+                    "#F0E442", "#0072B2", "#D55E00", "#CC79A7"
+                ],
+                "plot_bgcolor": "#FFFFFF",
+                "paper_bgcolor": "#FFFFFF",
+                "margin": {
+                    "l": 60,
+                    "r": 60,
+                    "t": 60,
+                    "b": 60,
+                    "pad": 5
+                },
+                "hovermode": false,
+                "xaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Times New Roman, serif",
+                            "size": 12,
+                            "color": "#000000"
+                        },
+                        "standoff": 10
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#DDDDDD",
+                    "gridwidth": 0.5,
+                    "zeroline": true,
+                    "zerolinecolor": "#000000",
+                    "zerolinewidth": 0.5,
+                    "showline": true,
+                    "linecolor": "#000000",
+                    "linewidth": 0.5,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Times New Roman, serif",
+                        "size": 8,
+                        "color": "#000000"
+                    },
+                    "ticklen": 3,
+                    "tickwidth": 0.5,
+                    "tickcolor": "#000000",
+                    "automargin": true
+                },
+                "yaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Times New Roman, serif",
+                            "size": 12,
+                            "color": "#000000"
+                        },
+                        "standoff": 10
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#DDDDDD",
+                    "gridwidth": 0.5,
+                    "zeroline": true,
+                    "zerolinecolor": "#000000",
+                    "zerolinewidth": 0.5,
+                    "showline": true,
+                    "linecolor": "#000000",
+                    "linewidth": 0.5,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Times New Roman, serif",
+                        "size": 8,
+                        "color": "#000000"
+                    },
+                    "ticklen": 3,
+                    "tickwidth": 0.5,
+                    "tickcolor": "#000000",
+                    "automargin": true
+                }
+            },
+            "traces": {
+                "line": {
+                    "line": {
+                        "width": 1.5,
+                        "shape": "linear"
+                    },
+                    "marker": {
+                        "size": 4,
+                        "opacity": 1.0
+                    },
+                    "mode": "lines+markers",
+                    "hovertemplate": null
+                },
+                "bar": {
+                    "marker": {
+                        "line": {
+                            "width": 0.5,
+                            "color": "#000000"
+                        },
+                        "opacity": 0.9
+                    },
+                    "hovertemplate": null
+                },
+                "scatter": {
+                    "marker": {
+                        "size": 6,
+                        "opacity": 1.0,
+                        "line": {
+                            "width": 0.5,
+                            "color": "#000000"
+                        }
+                    },
+                    "mode": "markers",
+                    "hovertemplate": null
+                },
+                "area": {
+                    "line": {
+                        "width": 1,
+                        "shape": "linear"
+                    },
+                    "fill": "tozeroy",
+                    "fillcolor": "rgba(0, 0, 0, 0.1)",
+                    "marker": {
+                        "size": 4,
+                        "opacity": 1.0
+                    },
+                    "mode": "lines",
+                    "hovertemplate": null
+                },
+                "pie": {
+                    "marker": {
+                        "line": {
+                            "width": 0.5,
+                            "color": "#000000"
+                        }
+                    },
+                    "textinfo": "percent+label",
+                    "hoverinfo": null
+                },
+                "heatmap": {
+                    "colorscale": "Greys",
+                    "showscale": true,
+                    "hovertemplate": null
+                }
+            }
+        },
+        "presentation": {
+            "layout": {
+                "font": {
+                    "family": "Calibri, sans-serif",
+                    "size": 16,
+                    "color": "#333333"
+                },
+                "title": {
+                    "font": {
+                        "family": "Calibri, sans-serif",
+                        "size": 28,
+                        "color": "#333333"
+                    },
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "legend": {
+                    "font": {
+                        "family": "Calibri, sans-serif",
+                        "size": 14,
+                        "color": "#333333"
+                    },
+                    "bgcolor": "rgba(255, 255, 255, 0.7)",
+                    "bordercolor": "#DDDDDD",
+                    "borderwidth": 1,
+                    "orientation": "h",
+                    "xanchor": "center",
+                    "x": 0.5,
+                    "yanchor": "bottom",
+                    "y": -0.2
+                },
+                "colorway": [
+                    "#4E79A7", "#F28E2C", "#E15759", "#76B7B2", 
+                    "#59A14F", "#EDC949", "#AF7AA1", "#FF9DA7", 
+                    "#9C755F", "#BAB0AB"
+                ],
+                "plot_bgcolor": "#FFFFFF",
+                "paper_bgcolor": "#FFFFFF",
+                "margin": {
+                    "l": 90,
+                    "r": 50,
+                    "t": 120,
+                    "b": 120,
+                    "pad": 10
+                },
+                "hovermode": "closest",
+                "hoverlabel": {
+                    "bgcolor": "#FFFFFF",
+                    "font": {
+                        "family": "Calibri, sans-serif",
+                        "size": 14,
+                        "color": "#333333"
+                    },
+                    "bordercolor": "#DDDDDD"
+                },
+                "xaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Calibri, sans-serif",
+                            "size": 18,
+                            "color": "#333333"
+                        },
+                        "standoff": 20
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#EEEEEE",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#CCCCCC",
+                    "zerolinewidth": 1.5,
+                    "showline": true,
+                    "linecolor": "#CCCCCC",
+                    "linewidth": 1.5,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Calibri, sans-serif",
+                        "size": 14,
+                        "color": "#333333"
+                    },
+                    "ticklen": 8,
+                    "tickwidth": 1.5,
+                    "tickcolor": "#CCCCCC",
+                    "automargin": true
+                },
+                "yaxis": {
+                    "title": {
+                        "font": {
+                            "family": "Calibri, sans-serif",
+                            "size": 18,
+                            "color": "#333333"
+                        },
+                        "standoff": 20
+                    },
+                    "showgrid": true,
+                    "gridcolor": "#EEEEEE",
+                    "gridwidth": 1,
+                    "zeroline": true,
+                    "zerolinecolor": "#CCCCCC",
+                    "zerolinewidth": 1.5,
+                    "showline": true,
+                    "linecolor": "#CCCCCC",
+                    "linewidth": 1.5,
+                    "ticks": "outside",
+                    "tickfont": {
+                        "family": "Calibri, sans-serif",
+                        "size": 14,
+                        "color": "#333333"
+                    },
+                    "ticklen": 8,
+                    "tickwidth": 1.5,
+                    "tickcolor": "#CCCCCC",
+                    "automargin": true
+                }
+            },
+            "traces": {
+                "line": {
+                    "line": {
+                        "width": 4,
+                        "shape": "linear"
+                    },
+                    "marker": {
+                        "size": 10,
+                        "opacity": 1.0
+                    },
+                    "mode": "lines+markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "bar": {
+                    "marker": {
+                        "line": {
+                            "width": 1,
+                            "color": "#FFFFFF"
+                        },
+                        "opacity": 0.85
+                    },
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "scatter": {
+                    "marker": {
+                        "size": 14,
+                        "opacity": 0.9,
+                        "line": {
+                            "width": 1.5,
+                            "color": "#FFFFFF"
+                        }
+                    },
+                    "mode": "markers",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "area": {
+                    "line": {
+                        "width": 3,
+                        "shape": "linear"
+                    },
+                    "fill": "tozeroy",
+                    "fillcolor": "rgba(78, 121, 167, 0.2)",
+                    "marker": {
+                        "size": 10,
+                        "opacity": 0.9
+                    },
+                    "mode": "lines",
+                    "hovertemplate": "%{y:,.1f}<extra>%{x}</extra>"
+                },
+                "pie": {
+                    "marker": {
+                        "line": {
+                            "width": 2,
+                            "color": "#FFFFFF"
+                        }
+                    },
+                    "textinfo": "percent+label",
+                    "textfont": {
+                        "size": 14
+                    },
+                    "hoverinfo": "label+percent+value",
+                    "hovertemplate": "%{label}: %{value:,.1f} (%{percent})<extra></extra>"
+                },
+                "heatmap": {
+                    "colorscale": "Viridis",
+                    "showscale": true,
+                    "hovertemplate": "X: %{x}<br>Y: %{y}<br>Value: %{z}<extra></extra>"
+                }
+            }
+        }
+    },
+    "customizations": {
+        "annotations": {
+            "default": {
+                "font": {
+                    "family": "Arial, sans-serif",
+                    "size": 12,
+                    "color": "#444444"
+                },
+                "align": "center",
+                "showarrow": true,
+                "arrowcolor": "#444444",
+                "arrowhead": 2,
+                "arrowsize": 1,
+                "arrowwidth": 1,
+                "ax": -30,
+                "ay": -40,
+                "bgcolor": "rgba(255, 255, 255, 0.8)",
+                "bordercolor": "#DDDDDD",
+                "borderpad": 4,
+                "borderwidth": 1
+            }
+        },
+        "watermark": {
+            "enabled": false,
+            "text": "Your Organization",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 20,
+                "color": "rgba(200, 200, 200, 0.3)"
+            },
+            "x": 0.5,
+            "y": 0.5,
+            "xanchor": "center",
+            "yanchor": "middle",
+            "angle": -30
+        },
+        "responsive": {
+            "autosize": true,
+            "minWidth": 400,
+            "maxWidth": 1200,
+            "initialWidth": 800,
+            "initialHeight": 500
+        },
+        "download": {
+            "filename": "plot",
+            "scale": 2,
+            "format": "png",
+            "height": 800,
+            "width": 1200
+        }
+    },
+    "graph_types": {
+        "financial": {
+            "layout": {
+                "xaxis": {
+                    "rangebreaks": [
+                        {"pattern": "day of week", "bounds": ["sat", "mon"]}
+                    ]
+                }
+            },
+            "traces": {
+                "candlestick": {
+                    "increasing": {"line": {"color": "#26A69A"}},
+                    "decreasing": {"line": {"color": "#EF5350"}},
+                    "line": {"width": 1},
+                    "whiskerwidth": 0.5
+                },
+                "ohlc": {
+                    "increasing": {"line": {"color": "#26A69A"}},
+                    "decreasing": {"line": {"color": "#EF5350"}},
+                    "line": {"width": 1}
+                }
+            }
+        },
+        "statistic": {
+            "traces": {
+                "box": {
+                    "boxmean": true,
+                    "jitter": 0.3,
+                    "pointpos": -1.8,
+                    "boxpoints": "outliers",
+                    "marker": {
+                        "size": 3,
+                        "opacity": 0.6
+                    },
+                    "line": {
+                        "width": 1
+                    }
+                },
+                "violin": {
+                    "box": {
+                        "visible": true
+                    },
+                    "meanline": {
+                        "visible": true
+                    },
+                    "points": "outliers",
+                    "jitter": 0.3,
+                    "pointpos": -1.8,
+                    "marker": {
+                        "size": 3,
+                        "opacity": 0.6
+                    },
+                    "line": {
+                        "width": 1
+                    }
+                },
+                "histogram": {
+                    "marker": {
+                        "line": {
+                            "width": 0.5,
+                            "color": "#FFFFFF"
+                        },
+                        "opacity": 0.75
+                    },
+                    "histnorm": "probability density",
+                    "autobinx": true,
+                    "nbinsx": 20
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+2025-02-27 09:22:11,259 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:22:11,262 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:22:12,378 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:22:12,416 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:22:12,416 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:22:12,474 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:22:12,475 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:24:32,684 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:24:32,687 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:24:33,222 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:24:33,261 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:24:33,262 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:24:33,314 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:24:33,315 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:25:11,599 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:25:11,603 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:25:12,033 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:25:12,071 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:25:12,071 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:25:12,112 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:25:12,113 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:32:17,263 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:32:17,267 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:32:17,830 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:32:17,876 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:32:17,877 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:32:17,926 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:32:17,926 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:34:02,705 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:34:02,708 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:34:02,885 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:34:02,913 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:34:02,913 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:34:02,948 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:34:02,948 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:35:01,357 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:35:01,360 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:35:01,624 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:35:01,670 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:35:01,670 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:35:01,727 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:35:01,728 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:37:21,397 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:37:21,401 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:37:21,603 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:37:21,633 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:37:21,634 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:37:21,675 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:37:21,676 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:40:12,427 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:40:12,432 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:40:12,617 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:40:12,643 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:40:12,643 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:40:12,704 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:40:12,704 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:53:54,188 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:53:54,192 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:53:54,402 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:53:54,437 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:53:54,437 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:53:54,506 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:53:54,507 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:57:21,716 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:57:21,720 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:57:22,363 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:57:22,410 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:57:22,410 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:57:22,474 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:57:22,474 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 09:59:39,750 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 09:59:39,753 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 09:59:40,220 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:59:40,248 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 09:59:40,248 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 09:59:40,305 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 09:59:40,305 - __main__ - INFO - Processing summary: 1/1 files successfully processed
+2025-02-27 10:05:44,165 - __main__ - INFO - Processing all files in raw directory
+2025-02-27 10:05:44,168 - __main__ - INFO - Step 1: Converting bbc_investeringsuitgaven_wegen_infra.xlsx to standardized format
+2025-02-27 10:05:44,366 - __main__ - INFO - Step 2: Validating bbc_investeringsuitgaven_wegen_infra
+2025-02-27 10:05:44,410 - __main__ - WARNING - Validation issues with bbc_investeringsuitgaven_wegen_infra. Proceeding with caution.
+2025-02-27 10:05:44,411 - __main__ - INFO - Step 3: Cleaning and preparing bbc_investeringsuitgaven_wegen_infra
+2025-02-27 10:05:44,468 - __main__ - INFO - Successfully processed bbc_investeringsuitgaven_wegen_infra.xlsx through all pipeline steps
+2025-02-27 10:05:44,468 - __main__ - INFO - Processing summary: 1/1 files successfully processed

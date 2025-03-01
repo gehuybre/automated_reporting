@@ -1,0 +1,155 @@
+{
+    "bbc_investeringsuitgaven_wegen_infra": {
+        "number_of_variables": 5,
+        "variable_names": [
+            "antwerpen",
+            "limburg",
+            "oost_vlaanderen",
+            "vlaams_brabant",
+            "west_vlaanderen"
+        ],
+        "date_type": "yearly",
+        "number_of_data_points": 12,
+        "visualization": {
+            "variables": {
+                "antwerpen": {
+                    "display_name": "Antwerpen",
+                    "description": "Data for Antwerpen",
+                    "color": "#d32121",
+                    "visible": true,
+                    "graph_id": "bbc_investeringsuitgaven_wegen_infra_antwerpen",
+                    "graph_config": {
+                        "title": "Antwerpen Over Time",
+                        "type": "line",
+                        "x_axis": {
+                            "title": "Time Period",
+                            "format": "auto"
+                        },
+                        "y_axis": {
+                            "title": "Value (EUR)",
+                            "format": ",.1f"
+                        }
+                    }
+                },
+                "limburg": {
+                    "display_name": "Limburg",
+                    "description": "Data for Limburg",
+                    "color": "#cfea61",
+                    "visible": true,
+                    "graph_id": "bbc_investeringsuitgaven_wegen_infra_limburg",
+                    "graph_config": {
+                        "title": "Limburg Over Time",
+                        "type": "line",
+                        "x_axis": {
+                            "title": "Time Period",
+                            "format": "auto"
+                        },
+                        "y_axis": {
+                            "title": "Value (EUR)",
+                            "format": ",.1f"
+                        }
+                    }
+                },
+                "oost_vlaanderen": {
+                    "display_name": "Oost Vlaanderen",
+                    "description": "Data for Oost Vlaanderen",
+                    "color": "#53e98f",
+                    "visible": true,
+                    "graph_id": "bbc_investeringsuitgaven_wegen_infra_oost_vlaanderen",
+                    "graph_config": {
+                        "title": "Oost Vlaanderen Over Time",
+                        "type": "line",
+                        "x_axis": {
+                            "title": "Time Period",
+                            "format": "auto"
+                        },
+                        "y_axis": {
+                            "title": "Value (EUR)",
+                            "format": ",.1f"
+                        }
+                    }
+                },
+                "vlaams_brabant": {
+                    "display_name": "Vlaams Brabant",
+                    "description": "Data for Vlaams Brabant",
+                    "color": "#619efb",
+                    "visible": true,
+                    "graph_id": "bbc_investeringsuitgaven_wegen_infra_vlaams_brabant",
+                    "graph_config": {
+                        "title": "Vlaams Brabant Over Time",
+                        "type": "line",
+                        "x_axis": {
+                            "title": "Time Period",
+                            "format": "auto"
+                        },
+                        "y_axis": {
+                            "title": "Value (EUR)",
+                            "format": ",.1f"
+                        }
+                    }
+                },
+                "west_vlaanderen": {
+                    "display_name": "West Vlaanderen",
+                    "description": "Data for West Vlaanderen",
+                    "color": "#b835d8",
+                    "visible": true,
+                    "graph_id": "bbc_investeringsuitgaven_wegen_infra_west_vlaanderen",
+                    "graph_config": {
+                        "title": "West Vlaanderen Over Time",
+                        "type": "line",
+                        "x_axis": {
+                            "title": "Time Period",
+                            "format": "auto"
+                        },
+                        "y_axis": {
+                            "title": "Value (EUR)",
+                            "format": ",.1f"
+                        }
+                    }
+                }
+            },
+            "graph_groups": [
+                {
+                    "id": "individual",
+                    "description": "Individual graphs for each variable",
+                    "graphs": [
+                        "bbc_investeringsuitgaven_wegen_infra_antwerpen",
+                        "bbc_investeringsuitgaven_wegen_infra_limburg",
+                        "bbc_investeringsuitgaven_wegen_infra_oost_vlaanderen",
+                        "bbc_investeringsuitgaven_wegen_infra_vlaams_brabant",
+                        "bbc_investeringsuitgaven_wegen_infra_west_vlaanderen"
+                    ]
+                },
+                {
+                    "id": "combined",
+                    "description": "All variables on a single graph",
+                    "graphs": [
+                        "bbc_investeringsuitgaven_wegen_infra_combined"
+                    ]
+                }
+            ],
+            "combined_graphs": [
+                {
+                    "id": "bbc_investeringsuitgaven_wegen_infra_combined",
+                    "title": "Bbc Investeringsuitgaven Wegen Infra - All Variables",
+                    "type": "line",
+                    "variables": [
+                        "antwerpen",
+                        "limburg",
+                        "oost_vlaanderen",
+                        "vlaams_brabant",
+                        "west_vlaanderen"
+                    ],
+                    "x_axis": {
+                        "title": "Time Period",
+                        "format": "auto"
+                    },
+                    "y_axis": {
+                        "title": "Value (EUR)",
+                        "format": ",.1f"
+                    }
+                }
+            ]
+        }
+    }
+}
