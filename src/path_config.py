@@ -2,159 +2,163 @@
 File: path_config.py
 Directory: /content/drive/MyDrive/Colab Notebooks/automated_reporting/src/
 
-This module defines the project path structure and provides utilities
-for accessing standardized file paths across the project.
+This module defines the file and directory paths used across the project,
+using a centralized configuration file.
 """
 
-import json
 import os
+import json
 from pathlib import Path
 import datetime
 
 class ProjectPaths:
-    def __init__(self, base_path="/content/drive/MyDrive/Colab Notebooks/automated_reporting"):
-        """Initialize project paths with a configurable base path"""
+    """Class that handles project paths configuration"""
+    
+    def __init__(self, config_path=None):
+        """
+        Initialize paths from the configuration file
+        
+        Parameters:
+        config_path (str): Path to the configuration file
+                          If None, uses the default location
+        """
+        # Default configuration path
+        if config_path is None:
+            config_path = "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/dictionaries/paths_config.json"
+        
+        self.config_path = config_path
+        self._load_config()
+        
+    def _load_config(self):
+        """Load paths from the configuration file"""
+        try:
+            with open(self.config_path, 'r') as f:
+                config = json.load(f)
+                
+            # Set all paths from config
+            for key, path in config.items():
+                setattr(self, key, path)
+                
+            # Create additional path attributes
+            self._create_additional_paths()
+            
+        except FileNotFoundError:
+            print(f"Configuration file not found at {self.config_path}")
+            # Set default paths
+            self._set_default_paths()
+            
+        except json.JSONDecodeError:
+            print(f"Error parsing JSON configuration at {self.config_path}")
+            # Set default paths
+            self._set_default_paths()
+    
+    def _set_default_paths(self):
+        """Set default paths if config file is not available"""
+        base_path = "/content/drive/MyDrive/Colab Notebooks/automated_reporting"
+        
+        # Main directories
         self.base_path = base_path
-        
-        # Source code directory
         self.src_dir = os.path.join(base_path, "src")
-        
-        # Main data directories
         self.data_dir = os.path.join(base_path, "data")
-        self.raw_data_dir = os.path.join(self.data_dir, "raw")
-        self.processed_data_dir = os.path.join(self.data_dir, "processed")
-        self.dictionary_dir = os.path.join(self.data_dir, "dictionaries")
-        self.logs_dir = os.path.join(self.data_dir, "logs")
-        
-        # Output directories for reports and visualizations
+        self.raw_data_dir = os.path.join(base_path, "data", "raw")
+        self.processed_data_dir = os.path.join(base_path, "data", "processed")
+        self.dictionary_dir = os.path.join(base_path, "data", "dictionaries")
+        self.logs_dir = os.path.join(base_path, "data", "logs")
         self.output_dir = os.path.join(base_path, "output")
-        self.reports_dir = os.path.join(self.output_dir, "reports")
-        self.visualizations_dir = os.path.join(self.output_dir, "visualizations")
-        self.html_reports_dir = os.path.join(self.output_dir, "html_reports")
-        
-        # Dynamic visualization directory with timestamp
-        current_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.current_visualizations_dir = os.path.join(self.visualizations_dir, current_time)
-        
-        # Template and config directories
+        self.reports_dir = os.path.join(base_path, "output", "reports")
+        self.visualizations_dir = os.path.join(base_path, "output", "visualizations")
+        self.html_reports_dir = os.path.join(base_path, "output", "html_reports")
         self.templates_dir = os.path.join(base_path, "templates")
-        self.css_dir = os.path.join(self.templates_dir, "css")
-        self.js_dir = os.path.join(self.templates_dir, "js")
+        self.css_dir = os.path.join(base_path, "templates", "css")
+        self.js_dir = os.path.join(base_path, "templates", "js")
         self.config_dir = os.path.join(base_path, "config")
         
-        # Metadata file paths
+        # Configuration files
         self.file_descriptions_path = os.path.join(self.dictionary_dir, "file_descriptions.json")
         self.paths_config_path = os.path.join(self.dictionary_dir, "paths_config.json")
         self.plotly_layout_config_path = os.path.join(self.dictionary_dir, "plotly_layout_config.json")
         self.dashboard_config_path = os.path.join(self.config_dir, "dashboard_config.json")
         self.report_config_path = os.path.join(self.config_dir, "report_config.json")
         
-        # Source code file paths
+        # Source files
         self.html_report_preview_path = os.path.join(self.src_dir, "html_report_preview.py")
         self.generate_html_report_path = os.path.join(self.src_dir, "generate_html_report.py")
         
-        # Pipeline log path
+        # Logs
         self.pipeline_log_path = os.path.join(self.logs_dir, "pipeline.log")
         
-        # Create all directories
-        self._create_directories()
-        
-        # Save the paths to a JSON file
-        self.save_paths_to_json()
+        # Create additional path attributes
+        self._create_additional_paths()
     
-    def _create_directories(self):
-        """Create all necessary directories if they don't exist"""
+    def _create_additional_paths(self):
+        """Create additional paths that depend on the base paths"""
+        # Create a timestamped directory for current visualizations
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.current_visualizations_dir = os.path.join(self.visualizations_dir, timestamp)
+        
+        # Add paths for tables
+        self.tables_dir = os.path.join(self.output_dir, "tables")
+    
+    def create_directories(self):
+        """Create all directories in the path configuration if they don't exist"""
         directories = [
             self.src_dir,
             self.data_dir,
             self.raw_data_dir,
-            self.processed_data_dir, 
+            self.processed_data_dir,
             self.dictionary_dir,
             self.logs_dir,
             self.output_dir,
             self.reports_dir,
             self.visualizations_dir,
-            self.current_visualizations_dir,
             self.html_reports_dir,
+            self.current_visualizations_dir,
             self.templates_dir,
             self.css_dir,
             self.js_dir,
-            self.config_dir
+            self.config_dir,
+            self.tables_dir
         ]
         
         for directory in directories:
-            Path(directory).mkdir(parents=True, exist_ok=True)
-            
-    def get_dataset_visualization_dir(self, dataset_name):
-        """Get visualization directory for a specific dataset"""
-        return os.path.join(self.current_visualizations_dir, dataset_name)
+            os.makedirs(directory, exist_ok=True)
     
-    def get_paths_dict(self):
-        """Return a dictionary containing all paths"""
-        return {
-            "base_path": self.base_path,
-            "src_dir": self.src_dir,
-            "data_dir": self.data_dir,
-            "raw_data_dir": self.raw_data_dir,
-            "processed_data_dir": self.processed_data_dir,
-            "dictionary_dir": self.dictionary_dir,
-            "logs_dir": self.logs_dir,
-            "output_dir": self.output_dir,
-            "reports_dir": self.reports_dir,
-            "visualizations_dir": self.visualizations_dir,
-            "html_reports_dir": self.html_reports_dir,
-            "current_visualizations_dir": self.current_visualizations_dir,
-            "templates_dir": self.templates_dir,
-            "css_dir": self.css_dir,
-            "js_dir": self.js_dir,
-            "config_dir": self.config_dir,
-            "file_descriptions_path": self.file_descriptions_path,
-            "paths_config_path": self.paths_config_path,
-            "plotly_layout_config_path": self.plotly_layout_config_path,
-            "dashboard_config_path": self.dashboard_config_path,
-            "report_config_path": self.report_config_path,
-            "html_report_preview_path": self.html_report_preview_path,
-            "generate_html_report_path": self.generate_html_report_path,
-            "pipeline_log_path": self.pipeline_log_path
-        }
-    
-    def save_paths_to_json(self):
-        """Save all paths to a JSON config file"""
-        with open(self.paths_config_path, 'w') as f:
-            json.dump(self.get_paths_dict(), f, indent=4)
-        print(f"Paths configuration saved to {self.paths_config_path}")
-    
-    @classmethod
-    def load_from_json(cls, json_path=None):
-        """Load paths from a JSON file"""
-        if json_path is None:
-            # Try to find paths_config.json in standard locations
-            base_paths = [
-                "/content/drive/MyDrive/Colab Notebooks/automated_reporting",
-                os.getcwd()
-            ]
-            
-            for base in base_paths:
-                possible_path = os.path.join(base, "data", "dictionaries", "paths_config.json")
-                if os.path.exists(possible_path):
-                    json_path = possible_path
-                    break
-            
-            if json_path is None:
-                raise FileNotFoundError("Could not find paths_config.json")
+    def save_config(self, path=None):
+        """
+        Save current configuration to a JSON file
         
-        with open(json_path, 'r') as f:
-            paths_dict = json.load(f)
+        Parameters:
+        path (str): Path to save the configuration
+                   If None, uses the paths_config_path
+        """
+        if path is None:
+            path = self.paths_config_path
         
-        # Create a new instance using the base path from the config
-        instance = cls(base_path=paths_dict.get("base_path"))
-        return instance
+        # Create dictionary of paths
+        config = {}
+        for key, value in self.__dict__.items():
+            # Skip private attributes and the config_path itself
+            if not key.startswith('_') and key != 'config_path':
+                config[key] = value
+        
+        # Create the directory if it doesn't exist
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        
+        # Save the configuration
+        with open(path, 'w') as f:
+            json.dump(config, f, indent=4)
+        
+        print(f"Configuration saved to {path}")
 
 
 if __name__ == "__main__":
-    # Create and save project paths
+    # Create paths object
     paths = ProjectPaths()
     
-    # Print out all paths
-    for name, path in paths.get_paths_dict().items():
-        print(f"{name}: {path}")
+    # Create all directories
+    paths.create_directories()
+    
+    # Print paths for verification
+    for key, value in paths.__dict__.items():
+        if not key.startswith('_') and key != 'config_path':
+            print(f"{key}: {value}")

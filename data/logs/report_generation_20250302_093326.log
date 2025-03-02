@@ -1,0 +1,16 @@
+2025-03-02 09:33:26,313 - __main__ - INFO - Starting HTML report generation
+2025-03-02 09:33:26,325 - __main__ - INFO - Loaded 1 dataset descriptions
+2025-03-02 09:33:26,326 - __main__ - INFO - Will process 1 datasets
+2025-03-02 09:33:26,388 - __main__ - INFO - Processing dataset: bbc_investeringsuitgaven_wegen_infra
+2025-03-02 09:33:26,389 - __main__ - INFO - Running data analysis for bbc_investeringsuitgaven_wegen_infra
+2025-03-02 09:33:26,463 - data_analysis_utils - INFO - Saved YoY analysis for bbc_investeringsuitgaven_wegen_infra to /content/drive/MyDrive/Colab Notebooks/automated_reporting/data/analysis/bbc_investeringsuitgaven_wegen_infra_yoy_20250302_093326.csv
+2025-03-02 09:33:26,481 - data_analysis_utils - INFO - Saved summary statistics for bbc_investeringsuitgaven_wegen_infra to /content/drive/MyDrive/Colab Notebooks/automated_reporting/data/analysis/bbc_investeringsuitgaven_wegen_infra_summary_20250302_093326.json
+2025-03-02 09:33:26,570 - data_analysis_utils - INFO - Saved insights for bbc_investeringsuitgaven_wegen_infra to /content/drive/MyDrive/Colab Notebooks/automated_reporting/data/analysis/bbc_investeringsuitgaven_wegen_infra_insights_20250302_093326.json
+2025-03-02 09:33:26,571 - __main__ - INFO - Completed data analysis for bbc_investeringsuitgaven_wegen_infra
+2025-03-02 09:33:26,571 - __main__ - INFO - Generating HTML table for bbc_investeringsuitgaven_wegen_infra
+2025-03-02 09:33:26,610 - __main__ - INFO - Saved HTML table to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/tables/bbc_investeringsuitgaven_wegen_infra_table.html
+2025-03-02 09:33:26,610 - __main__ - INFO - Generating report preview for bbc_investeringsuitgaven_wegen_infra
+2025-03-02 09:33:27,306 - html_report_preview - INFO - Generated report preview: /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/html_reports/bbc_investeringsuitgaven_wegen_infra_report_20250302_093327.html
+2025-03-02 09:33:27,306 - __main__ - INFO - Generated report preview: /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/html_reports/bbc_investeringsuitgaven_wegen_infra_report_20250302_093327.html
+2025-03-02 09:33:27,307 - __main__ - INFO - Report generation complete. Generated 1 reports.
+2025-03-02 09:33:27,307 - __main__ - INFO - - /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/html_reports/bbc_investeringsuitgaven_wegen_infra_report_20250302_093327.html

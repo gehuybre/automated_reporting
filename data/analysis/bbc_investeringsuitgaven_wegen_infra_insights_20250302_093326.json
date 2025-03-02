@@ -1,0 +1,56 @@
+{
+    "overview": [
+        "This analysis covers Bbc Investeringsuitgaven Wegen Infra data from 2015-01-01 to 2026-01-01, spanning 12 observations across 5 variables."
+    ],
+    "variables": {
+        "antwerpen": [
+            "Antwerpen ranges from 116,135,265 to 537,711,875, with an average of 231,692,677.",
+            "The highest value was recorded in 2025, while the lowest value was in 2015.",
+            "Antwerpen shows a compound annual growth rate of 10.6% over the analyzed period.",
+            "The current trend for Antwerpen is increasing.",
+            "A trend change to down was detected at 2021-01-01 00:00:00.",
+            "A trend change to up was detected at 2024-01-01 00:00:00."
+        ],
+        "limburg": [
+            "Limburg ranges from 57,715,242 to 236,695,154, with an average of 112,502,250.",
+            "The highest value was recorded in 2025, while the lowest value was in 2015.",
+            "Limburg shows a compound annual growth rate of 2.8% over the analyzed period.",
+            "The current trend for Limburg is decreasing.",
+            "A trend change to up was detected at 2022-01-01 00:00:00.",
+            "A trend change to down was detected at 2026-01-01 00:00:00."
+        ],
+        "oost_vlaanderen": [
+            "Oost Vlaanderen ranges from 92,935,605 to 345,172,046, with an average of 177,051,134.",
+            "The highest value was recorded in 2025, while the lowest value was in 2015.",
+            "Oost Vlaanderen shows a compound annual growth rate of 7.2% over the analyzed period.",
+            "The current trend for Oost Vlaanderen is increasing.",
+            "A trend change to down was detected at 2020-01-01 00:00:00.",
+            "A trend change to up was detected at 2022-01-01 00:00:00."
+        ],
+        "vlaams_brabant": [
+            "Vlaams Brabant ranges from 71,605,274 to 317,319,332, with an average of 151,025,505.",
+            "The highest value was recorded in 2025, while the lowest value was in 2015.",
+            "Vlaams Brabant shows a compound annual growth rate of 10.4% over the analyzed period.",
+            "The current trend for Vlaams Brabant is increasing.",
+            "A trend change to down was detected at 2021-01-01 00:00:00.",
+            "A trend change to up was detected at 2022-01-01 00:00:00."
+        ],
+        "west_vlaanderen": [
+            "West Vlaanderen ranges from 100,854,064 to 369,532,453, with an average of 180,398,136.",
+            "The highest value was recorded in 2024, while the lowest value was in 2015.",
+            "West Vlaanderen shows a compound annual growth rate of 6.9% over the analyzed period.",
+            "The current trend for West Vlaanderen is increasing.",
+            "A trend change to down was detected at 2020-01-01 00:00:00.",
+            "A trend change to up was detected at 2022-01-01 00:00:00."
+        ]
+    },
+    "comparisons": [
+        "There is a strong positive correlation (0.96) between Oost Vlaanderen and West Vlaanderen.",
+        "There is a strong positive correlation (0.95) between Oost Vlaanderen and Vlaams Brabant."
+    ],
+    "recommendations": [
+        "Consider monitoring the trends in Bbc Investeringsuitgaven Wegen Infra data on a quarterly basis.",
+        "Pay special attention to variables with consistent year-over-year growth patterns.",
+        "Investigate the factors behind recent trend changes in Antwerpen (up), Limburg (down), Oost Vlaanderen (up)"
+    ]
+}

@@ -18,7 +18,6 @@ from path_config import ProjectPaths
 from data_analysis_utils import DataAnalyzer
 from html_table_generator import HTMLTableGenerator
 from html_report_preview import HTMLReportPreview
-from update_paths_config import update_paths_config
 
 def setup_logging():
     """Setup logging configuration"""
@@ -59,17 +58,18 @@ def generate_html_report(dataset_name=None, theme="default", include_yoy=True, i
     logger = setup_logging()
     logger.info("Starting HTML report generation")
     
-    # Update paths configuration to ensure all required directories exist
-    try:
-        paths = update_paths_config()
-        logger.info("Updated paths configuration")
-    except Exception as e:
-        paths = ProjectPaths().get_paths_dict()
-        logger.warning(f"Error updating paths configuration: {str(e)}. Using existing paths.")
+    # Initialize paths
+    paths = ProjectPaths()
+    
+    # Create required directories
+    tables_dir = os.path.join(paths.output_dir, "tables")
+    os.makedirs(tables_dir, exist_ok=True)
+    os.makedirs(paths.reports_dir, exist_ok=True)
+    os.makedirs(paths.html_reports_dir, exist_ok=True)
     
     # Load file descriptions
     try:
-        with open(paths['file_descriptions_path'], 'r') as f:
+        with open(paths.file_descriptions_path, 'r') as f:
             file_descriptions = json.load(f)
         logger.info(f"Loaded {len(file_descriptions)} dataset descriptions")
     except Exception as e:
@@ -126,7 +126,7 @@ def generate_html_report(dataset_name=None, theme="default", include_yoy=True, i
             )
             
             # Save table HTML to file
-            table_path = os.path.join(paths['tables_dir'], f"{dataset}_table.html")
+            table_path = os.path.join(tables_dir, f"{dataset}_table.html")
             with open(table_path, 'w', encoding='utf-8') as f:
                 f.write(table_html)
             

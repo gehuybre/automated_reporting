@@ -1,0 +1,76 @@
+{
+    "antwerpen": {
+        "display_name": "Antwerpen",
+        "min": 116135265,
+        "max": 537711875,
+        "mean": 231692676.75,
+        "median": 187953138.5,
+        "std_dev": 123365823.09542051,
+        "total": "2780312121",
+        "count": "12",
+        "max_year": 2025,
+        "min_year": 2015,
+        "cagr": 10.60455895263468
+    },
+    "limburg": {
+        "display_name": "Limburg",
+        "min": 57715242,
+        "max": 236695154,
+        "mean": 112502249.75,
+        "median": 92360470.0,
+        "std_dev": 60010994.09077961,
+        "total": "1350026997",
+        "count": "12",
+        "max_year": 2025,
+        "min_year": 2015,
+        "cagr": 2.8039585819280344
+    },
+    "oost_vlaanderen": {
+        "display_name": "Oost Vlaanderen",
+        "min": 92935605,
+        "max": 345172046,
+        "mean": 177051133.83333334,
+        "median": 156762580.0,
+        "std_dev": 74597657.69461972,
+        "total": "2124613606",
+        "count": "12",
+        "max_year": 2025,
+        "min_year": 2015,
+        "cagr": 7.235159814318681
+    },
+    "vlaams_brabant": {
+        "display_name": "Vlaams Brabant",
+        "min": 71605274,
+        "max": 317319332,
+        "mean": 151025504.91666666,
+        "median": 116247409.5,
+        "std_dev": 80153144.96107306,
+        "total": "1812306059",
+        "count": "12",
+        "max_year": 2025,
+        "min_year": 2015,
+        "cagr": 10.393051064064295
+    },
+    "west_vlaanderen": {
+        "display_name": "West Vlaanderen",
+        "min": 100854064,
+        "max": 369532453,
+        "mean": 180398135.58333334,
+        "median": 146740747.0,
+        "std_dev": 84858669.76234815,
+        "total": "2164777627",
+        "count": "12",
+        "max_year": 2024,
+        "min_year": 2015,
+        "cagr": 6.866048635182054
+    },
+    "_dataset": {
+        "name": "bbc_investeringsuitgaven_wegen_infra",
+        "display_name": "Bbc Investeringsuitgaven Wegen Infra",
+        "num_variables": 5,
+        "num_observations": 12,
+        "years_covered": 12,
+        "date_first": "2015-01-01",
+        "date_last": "2026-01-01"
+    }
+}

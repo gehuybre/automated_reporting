@@ -22,5 +22,9 @@
     "report_config_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/config/report_config.json",
     "html_report_preview_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/src/html_report_preview.py",
     "generate_html_report_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/src/generate_html_report.py",
-    "pipeline_log_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/logs/pipeline.log"
+    "pipeline_log_path": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/logs/pipeline.log",
+    "tables_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/tables",
+    "dashboard_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/output/dashboard",
+    "statistics_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/statistics",
+    "analysis_dir": "/content/drive/MyDrive/Colab Notebooks/automated_reporting/data/analysis"
 }
