@@ -62,3 +62,19 @@
 2025-03-01 10:56:33,719 - __main__ - INFO - Visualization generation complete. All files saved to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_105631
 2025-03-01 10:56:33,765 - __main__ - INFO - Adding dataset to dashboard: bbc_investeringsuitgaven_wegen_infra
 2025-03-01 10:56:34,076 - __main__ - INFO - HTML dashboard saved to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/reports/dashboard_20250301_105633.html
+2025-03-01 11:05:49,280 - __main__ - INFO - Processing visualizations for dataset: bbc_investeringsuitgaven_wegen_infra
+2025-03-01 11:05:49,284 - __main__ - INFO - Generating individual graph: Antwerpen Over Time (bbc_investeringsuitgaven_wegen_infra_antwerpen)
+2025-03-01 11:05:50,613 - __main__ - INFO - Saved Antwerpen visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_antwerpen.png
+2025-03-01 11:05:50,614 - __main__ - INFO - Generating individual graph: Limburg Over Time (bbc_investeringsuitgaven_wegen_infra_limburg)
+2025-03-01 11:05:50,748 - __main__ - INFO - Saved Limburg visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_limburg.png
+2025-03-01 11:05:50,749 - __main__ - INFO - Generating individual graph: Oost Vlaanderen Over Time (bbc_investeringsuitgaven_wegen_infra_oost_vlaanderen)
+2025-03-01 11:05:50,903 - __main__ - INFO - Saved Oost Vlaanderen visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_oost_vlaanderen.png
+2025-03-01 11:05:50,904 - __main__ - INFO - Generating individual graph: Vlaams Brabant Over Time (bbc_investeringsuitgaven_wegen_infra_vlaams_brabant)
+2025-03-01 11:05:51,045 - __main__ - INFO - Saved Vlaams Brabant visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_vlaams_brabant.png
+2025-03-01 11:05:51,045 - __main__ - INFO - Generating individual graph: West Vlaanderen Over Time (bbc_investeringsuitgaven_wegen_infra_west_vlaanderen)
+2025-03-01 11:05:51,193 - __main__ - INFO - Saved West Vlaanderen visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_west_vlaanderen.png
+2025-03-01 11:05:51,194 - __main__ - INFO - Generating combined graph: Bbc Investeringsuitgaven Wegen Infra - All Variables (bbc_investeringsuitgaven_wegen_infra_combined)
+2025-03-01 11:05:51,420 - __main__ - INFO - Saved combined visualization to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549/bbc_investeringsuitgaven_wegen_infra/bbc_investeringsuitgaven_wegen_infra_combined.png
+2025-03-01 11:05:51,420 - __main__ - INFO - Visualization generation complete. All files saved to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/visualizations/20250301_110549
+2025-03-01 11:05:51,458 - __main__ - INFO - Adding dataset to dashboard: bbc_investeringsuitgaven_wegen_infra
+2025-03-01 11:05:51,784 - __main__ - INFO - HTML dashboard saved to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/reports/dashboard_20250301_110551.html

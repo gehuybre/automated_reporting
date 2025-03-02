@@ -59,6 +59,34 @@ def generate_distinct_colors(n):
     
     return colors
 
+def standardize_column_names(df):
+    """
+    Standardize column names to lowercase with underscores
+    - Convert to lowercase
+    - Replace hyphens with underscores
+    - Replace spaces with underscores
+    - Remove special characters
+    """
+    rename_dict = {}
+    
+    # Skip the first column (usually date/time)
+    first_col = df.columns[0]
+    
+    for col in df.columns[1:]:
+        # Create standardized name: lowercase, replace hyphens and spaces with underscores
+        std_name = col.lower().replace('-', '_').replace(' ', '_')
+        # Remove any remaining special characters except underscores
+        std_name = re.sub(r'[^\w]', '', std_name)
+        # If standardized name is different, add to rename dict
+        if std_name != col:
+            rename_dict[col] = std_name
+    
+    # Apply renaming if needed
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
+    
+    return df
+
 def process_csv_files():
     """Process all CSV files in the raw data directory"""
     # Setup logging
@@ -136,6 +164,9 @@ def process_csv_files():
             # Convert first column to string if it's not already
             first_col_name = df.columns[0]
             df[first_col_name] = df[first_col_name].astype(str)
+            
+            # Standardize column names (convert to lowercase with underscores)
+            df = standardize_column_names(df)
             
             # Get file basename
             basename = os.path.splitext(file)[0]
@@ -262,6 +293,62 @@ def process_csv_files():
                         "combined_graphs": [combined_graph_config]
                     }
                 }
+            else:
+                # Update existing file description with standardized column names
+                # This ensures file_descriptions.json matches the actual processed data
+                existing_config = file_descriptions[basename]
+                existing_config["variable_names"] = variable_names
+                
+                # Update variable entries in visualization config
+                if "visualization" in existing_config and "variables" in existing_config["visualization"]:
+                    # Create a temporary dict with standardized names
+                    new_variables = {}
+                    for var_name in variable_names:
+                        # If a capitalized/hyphenated version exists in the config, use its settings
+                        for old_name, config in existing_config["visualization"]["variables"].items():
+                            if old_name.lower().replace('-', '_').replace(' ', '_') == var_name:
+                                # Update the display name to match the original format
+                                config["display_name"] = " ".join(word.capitalize() for word in var_name.split('_'))
+                                new_variables[var_name] = config
+                                break
+                        else:
+                            # If not found, create a new entry
+                            display_name = " ".join(word.capitalize() for word in var_name.split('_'))
+                            new_variables[var_name] = {
+                                "display_name": display_name,
+                                "description": f"Data for {display_name}",
+                                "color": colors[variable_names.index(var_name)],
+                                "visible": True,
+                                "graph_id": f"{basename}_{var_name}",
+                                "graph_config": {
+                                    "title": f"{display_name} Over Time",
+                                    "type": "line",
+                                    "x_axis": {
+                                        "title": "Time Period",
+                                        "format": "auto"
+                                    },
+                                    "y_axis": {
+                                        "title": f"Value",
+                                        "format": ",.1f"
+                                    }
+                                }
+                            }
+                    
+                    # Replace the old variables with standardized ones
+                    existing_config["visualization"]["variables"] = new_variables
+                    
+                    # Update combined graphs to use standardized variable names
+                    if "combined_graphs" in existing_config["visualization"]:
+                        for graph in existing_config["visualization"]["combined_graphs"]:
+                            if "variables" in graph:
+                                # Replace with standardized variable names
+                                graph["variables"] = variable_names
+                    
+                    # Update graph groups to use standardized IDs
+                    if "graph_groups" in existing_config["visualization"]:
+                        for group in existing_config["visualization"]["graph_groups"]:
+                            if group["id"] == "individual":
+                                group["graphs"] = [f"{basename}_{var}" for var in variable_names]
             
             # Save processed dataframe
             processed_file_path = os.path.join(processed_data_path, file)

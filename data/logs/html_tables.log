@@ -1,0 +1,2 @@
+2025-03-01 11:44:35,350 - __main__ - INFO - Generating table for dataset: bbc_investeringsuitgaven_wegen_infra
+2025-03-01 11:44:35,379 - __main__ - INFO - Saved table to /content/drive/MyDrive/Colab Notebooks/automated_reporting/output/tables/bbc_investeringsuitgaven_wegen_infra_table.html

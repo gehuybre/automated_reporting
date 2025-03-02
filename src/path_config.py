@@ -30,15 +30,28 @@ class ProjectPaths:
         self.output_dir = os.path.join(base_path, "output")
         self.reports_dir = os.path.join(self.output_dir, "reports")
         self.visualizations_dir = os.path.join(self.output_dir, "visualizations")
+        self.html_reports_dir = os.path.join(self.output_dir, "html_reports")
         
         # Dynamic visualization directory with timestamp
         current_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         self.current_visualizations_dir = os.path.join(self.visualizations_dir, current_time)
         
+        # Template and config directories
+        self.templates_dir = os.path.join(base_path, "templates")
+        self.css_dir = os.path.join(self.templates_dir, "css")
+        self.js_dir = os.path.join(self.templates_dir, "js")
+        self.config_dir = os.path.join(base_path, "config")
+        
         # Metadata file paths
         self.file_descriptions_path = os.path.join(self.dictionary_dir, "file_descriptions.json")
         self.paths_config_path = os.path.join(self.dictionary_dir, "paths_config.json")
         self.plotly_layout_config_path = os.path.join(self.dictionary_dir, "plotly_layout_config.json")
+        self.dashboard_config_path = os.path.join(self.config_dir, "dashboard_config.json")
+        self.report_config_path = os.path.join(self.config_dir, "report_config.json")
+        
+        # Source code file paths
+        self.html_report_preview_path = os.path.join(self.src_dir, "html_report_preview.py")
+        self.generate_html_report_path = os.path.join(self.src_dir, "generate_html_report.py")
         
         # Pipeline log path
         self.pipeline_log_path = os.path.join(self.logs_dir, "pipeline.log")
@@ -61,7 +74,12 @@ class ProjectPaths:
             self.output_dir,
             self.reports_dir,
             self.visualizations_dir,
-            self.current_visualizations_dir
+            self.current_visualizations_dir,
+            self.html_reports_dir,
+            self.templates_dir,
+            self.css_dir,
+            self.js_dir,
+            self.config_dir
         ]
         
         for directory in directories:
@@ -84,10 +102,19 @@ class ProjectPaths:
             "output_dir": self.output_dir,
             "reports_dir": self.reports_dir,
             "visualizations_dir": self.visualizations_dir,
+            "html_reports_dir": self.html_reports_dir,
             "current_visualizations_dir": self.current_visualizations_dir,
+            "templates_dir": self.templates_dir,
+            "css_dir": self.css_dir,
+            "js_dir": self.js_dir,
+            "config_dir": self.config_dir,
             "file_descriptions_path": self.file_descriptions_path,
             "paths_config_path": self.paths_config_path,
             "plotly_layout_config_path": self.plotly_layout_config_path,
+            "dashboard_config_path": self.dashboard_config_path,
+            "report_config_path": self.report_config_path,
+            "html_report_preview_path": self.html_report_preview_path,
+            "generate_html_report_path": self.generate_html_report_path,
             "pipeline_log_path": self.pipeline_log_path
         }
     
